@@ -568,3 +568,46 @@ textarea:focus {
     align-self: flex-start;
   }
 }
+/* ===== Mobile CTA fixes ===== */
+@media (max-width: 480px) {
+  /* If your buttons sit inside a container (e.g., .actions or .cta) use it here.
+     If not, this still works by targeting the two CTAs inside the hero area. */
+  .hero .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 18px; /* bigger tap target */
+    font-size: 1.05rem; /* slightly larger text */
+    line-height: 1.15;
+    border-radius: 16px; /* a bit softer corners */
+  }
+
+  /* Put space between the two buttons */
+  .hero .btn + .btn {
+    margin-top: 12px;
+  }
+
+  /* Keep the ghost/outline button equally wide and readable */
+  .hero .btn--ghost {
+    border-width: 1px;
+  }
+
+  /* Give the block under the CTAs room to breathe */
+  .hero {
+    padding-bottom: 1rem;
+  }
+}
+
+/* Slightly wider phones: add a horizontal gap but still allow wrap */
+@media (min-width: 481px) and (max-width: 640px) {
+  .hero .btn {
+    padding: 14px 22px;
+    font-size: 1.05rem;
+  }
+  .hero .btn + .btn {
+    margin-left: 10px;
+  }
+  /* If they don’t fit side-by-side, they’ll wrap; keep vertical spacing tidy */
+  .hero .btn:nth-child(n + 2) {
+    margin-top: 10px;
+  }
+}
